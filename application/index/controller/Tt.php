@@ -16,6 +16,7 @@ class Tt extends Controller
             ["id" => 4, "name" => '赵六'],
         ];
 
-        return view('index@tt/index', compact('data'));
+        $age = 10;
+        return view('index@tt/index', compact('data', 'age'));
     }
 }

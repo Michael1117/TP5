@@ -18,10 +18,12 @@ class Index extends Controller
         $arr = ['id' => 1, 'name' => '张三'];
         $code = 'admin';
 
+        $age = 10;
+
         echo webmd5('admin888');
         View::share('webName', '网站名称');
         // 推荐
-        return view('index@index/index', compact('a', 'arr', 'code'));
+        return view('index@index/index', compact('a', 'arr', 'code', 'age'));
     }
 
     public function demo()

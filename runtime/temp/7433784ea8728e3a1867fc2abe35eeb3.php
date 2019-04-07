@@ -1,4 +1,4 @@
-<?php /*a:1:{s:47:"E:\PHP\TP5\application\index\view\tt\index.html";i:1554672387;}*/ ?>
+<?php /*a:1:{s:47:"E:\PHP\TP5\application\index\view\tt\index.html";i:1554672662;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,5 +15,13 @@
         <li><?php echo htmlentities($val['id']); ?>---<?php echo htmlentities($val['name']); ?></li>
         <?php endforeach; ?>
     </ul>
+    <hr>
+    <h3>条件判断</h3>
+    <div>
+        <?php if($age < 10): ?> 儿童
+        <?php elseif($age<30): ?> 青年
+        <?php else: ?> 中年
+        <?php endif; ?>
+    </div>
 </body>
 </html>
