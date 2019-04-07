@@ -13,7 +13,7 @@ class Index
         dump($_SERVER);
     }
     public function demo2() {
-        return 'bbbb'
+        return 'bbbb';
     }
     public function hello($name = 'ThinkPHP5')
     {

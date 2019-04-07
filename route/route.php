@@ -9,7 +9,11 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-Route::get('think', function () {
+// 引入Route 门面 ，不是必须得 上线的时候可以注释掉
+
+use think\facade\Route;
+
+/*Route::get('think', function () {
     return 'hello,ThinkPHP5!';
 });
 
@@ -17,4 +21,11 @@ Route::get('hello/:name', 'index/hello');
 
 return [
 
-];
+];*/
+
+// index/index/demo  模块/控制器/方法
+//Route::get('dd', 'index/index/demo');
+
+Route::get('/', function (){
+    return "我们在最好的年华";
+});
