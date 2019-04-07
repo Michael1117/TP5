@@ -23,8 +23,26 @@ use think\facade\Route;
  * /admin/main/index/
  * /admin/main/welcome
  * */
-Route::group('admin', function (){
+/*Route::group('admin', function (){
     Route::get('login', function (){
         return 'index';
     });
+});*/
+
+
+//Route::get('demo', 'index/demo/index');
+
+
+// 定义控制器路由                                       路由别名
+
+//Route::get('abc', 'index/index/index') -> name('indexr');
+
+/*Route::group(['method' => 'get', 'name' => 'aa'], function () {
+    Route::get('index', 'index');
+    Route::get('demo', 'demo');
+})->prefix('index/index/');*/
+
+Route::group(['name' => 'aa', 'prefix' => 'index/index/'], function () {
+    Route::get('index', 'index');
+    Route::get('demo', 'demo');
 });
