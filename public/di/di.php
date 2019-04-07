@@ -1,6 +1,6 @@
 <?php
 
-class Db
+class Database
 {
     public function query()
     {
@@ -19,20 +19,24 @@ class Paginate
 
 class Vcode
 {
-    public function code() {
+    public function code()
+    {
         return 'code';
     }
 }
 
-class Controller{
-    public function index() {
-        $db = new Db();
-        $page = new Paginate();
-        $code = new Vcode();
+class Controller
+{
+    public function index($db, $page, $code)
+    {
 
-        echo $db -> query().'--'.$page->page().'--'.$code->code();
+        echo $db->query() . '--' . $page->page() . '--' . $code->code();
     }
 }
 
-// PHP 5.4
-(new Controller()) -> index();
+$db = new Database();
+$page = new Paginate();
+$code = new Vcode();
+
+// PHP 5.4  反射 
+(new Controller())->index($db, $page, $code);
