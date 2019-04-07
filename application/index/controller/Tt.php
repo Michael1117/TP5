@@ -19,4 +19,9 @@ class Tt extends Controller
         $age = 10;
         return view('index@tt/index', compact('data', 'age'));
     }
+
+    // 模板继承
+    public  function ext() {
+        return view('index@tt/ext');
+    }
 }

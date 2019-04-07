@@ -1,0 +1,17 @@
+// 继承父模板
+{extend name="common/base" /}
+
+<!-- 实现占位 -->
+
+{block name="css"}{/block}
+
+{block name="content"}
+    <div>
+        <p>你好世界</p>
+    </div>
+{/block}
+
+{block name="js"}
+{__block__}
+<script src="vue.js"></script>
+{/block}
