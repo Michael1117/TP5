@@ -51,11 +51,24 @@ use think\facade\Route;
 
 Route::get('req', '@index/index/req') -> name('index/index/req');
 
-//Route::post('req', '@index/index/req') -> name('index/index/req');
+Route::post('req', '@index/index/req') -> name('index/index/req');
 
 
 // 修改
-//Route::put('req', '@index/index/req') -> name('index/index/req');
+Route::put('req', '@index/index/req') -> name('index/index/req');
 
 //
-//Route::delete('req', '@index/index/req') -> name('index/index/req');
+Route::delete('req', '@index/index/req') -> name('index/index/req');
+
+
+
+
+Route::group(['prefix'=>'@index/index/'], function () {
+    Route::get('req2', 'req2') -> name('index/index/req2');
+    Route::post('req2', 'req2') -> name('index/index/req2');
+// 修改
+    Route::put('req2', 'req2') -> name('index/index/req2');
+
+    Route::delete('req2', 'req2') -> name('index/index/req2');
+});
+

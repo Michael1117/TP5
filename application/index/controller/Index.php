@@ -1,7 +1,9 @@
 <?php
+
 namespace app\index\controller;
 
-use think\facade\Request;
+//use think\Request;
+//use think\facade\Request;
 
 class Index
 {
@@ -10,22 +12,28 @@ class Index
         return 'PHP是最好的语言';
     }
 
-    public function demo() {
+    public function demo()
+    {
         //return 'aaaa';
         dump($_SERVER);
     }
-    public function demo2() {
+
+    public function demo2()
+    {
         return 'bbbb';
     }
+
     public function hello($name = 'ThinkPHP5')
     {
         return 'hello,' . $name;
     }
 
-    // 请求
-    public function req(){
+    // 请求  use think\Request
+    public function req(Request $request)
+    {
+        // 门面方式获取数据 use think\facade\Request
 
-        //1
+        /*//1
         //echo Request::get('id');
         //echo Request::get('age', 20);
         # echo Request::get('age', 20, 'intval');
@@ -73,6 +81,43 @@ class Index
         // 获取环境变量
         #dump(Request::env());
 
-        dump(Request::route());
+        #dump(Request::route());*/
+
+        // 依赖注入方式 [推荐]
+        /*dump($request->get('name'));
+        dump($request->has('gender'));
+
+        dump($request->only(['id']));
+
+        dump($request->except(['id']));*/
+    }
+
+    public function req2()
+    {
+        // 辅助函数  [推荐]
+        // 获取GET的全部参数
+        # dump(input('get.'));
+
+        # dump(input('get.id'));
+
+        # dump(input('get.gender', '女士'));
+
+        // post 数据
+        # dump(input('post.'));
+
+        // 获取任意类型的请求
+
+        # dump(input('param.'));
+        # dump(input(''));
+        // 获取任意类型的key 为name的值  如果get 和post 优先post
+        # dump(input('name'));
+
+        // 判断一个key 是否存在
+
+        # dump(input('?gender'));
+
+        // 使用变量修饰符 a 数组 s:字符串 d:数字
+        dump(input('name/d'));
+
     }
 }
