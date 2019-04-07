@@ -11,6 +11,14 @@
     <ul>
         <li>id：{$arr['id']}</li>
         <li>姓名：{$arr['name']}</li>
+
     </ul>
+
+    <div>
+        加密：{$code|md5}
+    </div>
+    <div>加密：{:md5($code)}</div>
+    <div>加密：{:webmd5($code)}</div>
+
 </body>
 </html>

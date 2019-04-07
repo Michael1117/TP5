@@ -1,4 +1,4 @@
-<?php /*a:1:{s:50:"E:\PHP\TP5\application\index\view\index\index.html";i:1554669328;}*/ ?>
+<?php /*a:1:{s:50:"E:\PHP\TP5\application\index\view\index\index.html";i:1554671122;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +12,14 @@
     <ul>
         <li>id：<?php echo htmlentities($arr['id']); ?></li>
         <li>姓名：<?php echo htmlentities($arr['name']); ?></li>
+
     </ul>
+
+    <div>
+        加密：<?php echo htmlentities(md5($code)); ?>
+    </div>
+    <div>加密：<?php echo md5($code); ?></div>
+    <div>加密：<?php echo webmd5($code); ?></div>
+
 </body>
 </html>

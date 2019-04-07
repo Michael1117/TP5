@@ -13,22 +13,15 @@ class Index extends Controller
 {
     public function index()
     {
-        //return 'PHP是最好的语言';
-        //return $this->fetch('../index/view/index/index');
-        //return $this->fetch('index@index/index');
-        //return $this->fetch();
-        //return '1111';
+
         $a = '我就是变量';
         $arr = ['id' => 1, 'name' => '张三'];
+        $code = 'admin';
 
-        // 模板赋值
-        //$this->assign('a', $a);
-        //return view('index@index/index', ['a' => $a]);
-
-        // 全局赋值方式
+        echo webmd5('admin888');
         View::share('webName', '网站名称');
         // 推荐
-        return view('index@index/index', compact('a', 'arr'));
+        return view('index@index/index', compact('a', 'arr', 'code'));
     }
 
     public function demo()
@@ -113,30 +106,7 @@ class Index extends Controller
 
     public function req2()
     {
-        // 辅助函数  [推荐]
-        // 获取GET的全部参数
-        # dump(input('get.'));
 
-        # dump(input('get.id'));
-
-        # dump(input('get.gender', '女士'));
-
-        // post 数据
-        # dump(input('post.'));
-
-        // 获取任意类型的请求
-
-        # dump(input('param.'));
-        # dump(input(''));
-        // 获取任意类型的key 为name的值  如果get 和post 优先post
-        # dump(input('name'));
-
-        // 判断一个key 是否存在
-
-        # dump(input('?gender'));
-
-        // 使用变量修饰符 a 数组 s:字符串 d:数字
-        # dump(input('name/d'));
         return '111';
 
     }
@@ -144,12 +114,7 @@ class Index extends Controller
     // 推荐
     public function req3(int $id = 0)
     {
-        //echo url('index/index/req');
-        //return ['id' => 1];
-        #$data = ['status' => 1000, 'msg' => '添加成功'];
-        //return json($data, 201, ['Content-Type' => 'application/json']);
-        #return json($data, 201, ['username' => 'admin', 'password'=>'admin888']);
         return redirect('/req2', ['id' => 1]);
-        # return redirect(url('index/index/req2', ['id' => 1]));
+
     }
 }
