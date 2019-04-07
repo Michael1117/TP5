@@ -42,7 +42,20 @@ use think\facade\Route;
     Route::get('demo', 'demo');
 })->prefix('index/index/');*/
 
-Route::group(['name' => 'aa', 'prefix' => 'index/index/'], function () {
+/*Route::group(['name' => 'aa', 'prefix' => 'index/index/'], function () {
     Route::get('index', 'index');
     Route::get('demo', 'demo');
-});
+});*/
+
+// 定义控制器路由
+
+Route::get('req', '@index/index/req') -> name('index/index/req');
+
+//Route::post('req', '@index/index/req') -> name('index/index/req');
+
+
+// 修改
+//Route::put('req', '@index/index/req') -> name('index/index/req');
+
+//
+//Route::delete('req', '@index/index/req') -> name('index/index/req');

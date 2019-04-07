@@ -12,3 +12,6 @@
 
 
 ## php think make:controller --plain admin/Demo2
+
+
+## put 需要选择 x-www-form-urlencoded
