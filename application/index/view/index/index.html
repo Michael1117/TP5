@@ -20,5 +20,10 @@
     <div>加密：{:md5($code)}</div>
     <div>加密：{:webmd5($code)}</div>
 
+    <script>
+        {literal}
+        let json = {'name': '{$code}'}
+        {/literal}
+    </script>
 </body>
 </html>

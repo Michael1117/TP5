@@ -1,4 +1,4 @@
-<?php /*a:1:{s:50:"E:\PHP\TP5\application\index\view\index\index.html";i:1554671122;}*/ ?>
+<?php /*a:1:{s:50:"E:\PHP\TP5\application\index\view\index\index.html";i:1554671508;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,5 +21,10 @@
     <div>加密：<?php echo md5($code); ?></div>
     <div>加密：<?php echo webmd5($code); ?></div>
 
+    <script>
+        
+        let json = {'name': '{$code}'}
+        
+    </script>
 </body>
 </html>
