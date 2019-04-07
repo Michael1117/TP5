@@ -28,6 +28,7 @@ return [
     'auto_bind_module'       => false,
     // 注册的根命名空间
     'root_namespace'         => [],
+    #'default_return_type'    => 'json',
     // 默认输出类型
     'default_return_type'    => 'html',
     // 默认AJAX 数据返回格式,可选json xml ...
@@ -97,7 +98,7 @@ return [
     // 是否开启路由延迟解析
     'url_lazy_route'         => false,
     // 是否强制使用路由
-    'url_route_must'         => true,
+    'url_route_must'         => false,
     // 合并路由规则
     'route_rule_merge'       => false,
     // 路由是否完全匹配

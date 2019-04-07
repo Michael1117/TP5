@@ -49,28 +49,28 @@ use think\facade\Route;
 
 // 定义控制器路由
 
-Route::get('req', '@index/index/req') -> name('index/index/req');
+#Route::get('req', '@index/index/req') -> name('index/index/req');
 
-Route::post('req', '@index/index/req') -> name('index/index/req');
+#Route::post('req', '@index/index/req') -> name('index/index/req');
 
 
 // 修改
-Route::put('req', '@index/index/req') -> name('index/index/req');
+#Route::put('req', '@index/index/req') -> name('index/index/req');
 
 //
-Route::delete('req', '@index/index/req') -> name('index/index/req');
+#Route::delete('req', '@index/index/req') -> name('index/index/req');
 
 
 
 
-Route::group(['prefix'=>'@index/index/'], function () {
+/*Route::group(['prefix'=>'@index/index/'], function () {
     Route::get('req2', 'req2') -> name('index/index/req2');
     Route::post('req2', 'req2') -> name('index/index/req2');
 // 修改
     Route::put('req2', 'req2') -> name('index/index/req2');
 
     Route::delete('req2', 'req2') -> name('index/index/req2');
-});
+});*/
 
 
 // 链式调用
@@ -79,4 +79,7 @@ Route::group(['prefix'=>'@index/index/'], function () {
 
 // 方式二
 // 可选参数
-Route::get('req3/[:id]', '@index/index/req3')->name('index/index/req3');
+#Route::get('req3/[:id]', '@index/index/req3')->name('index/index/req3');
+
+
+#Route::get('index', '@index/index/index')->name('index');

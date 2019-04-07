@@ -2,14 +2,33 @@
 
 namespace app\index\controller;
 
-//use think\Request;
+use think\Controller;
+
+use think\Request;
+use think\facade\View;
+
 //use think\facade\Request;
 
-class Index
+class Index extends Controller
 {
     public function index()
     {
-        return 'PHP是最好的语言';
+        //return 'PHP是最好的语言';
+        //return $this->fetch('../index/view/index/index');
+        //return $this->fetch('index@index/index');
+        //return $this->fetch();
+        //return '1111';
+        $a = '我就是变量';
+        $arr = ['id' => 1, 'name' => '张三'];
+
+        // 模板赋值
+        //$this->assign('a', $a);
+        //return view('index@index/index', ['a' => $a]);
+
+        // 全局赋值方式
+        View::share('webName', '网站名称');
+        // 推荐
+        return view('index@index/index', compact('a', 'arr'));
     }
 
     public function demo()
@@ -118,11 +137,19 @@ class Index
 
         // 使用变量修饰符 a 数组 s:字符串 d:数字
         # dump(input('name/d'));
+        return '111';
 
     }
 
     // 推荐
-    public function req3(int $id = 0) {
-        return '参数为：'.$id;
+    public function req3(int $id = 0)
+    {
+        //echo url('index/index/req');
+        //return ['id' => 1];
+        #$data = ['status' => 1000, 'msg' => '添加成功'];
+        //return json($data, 201, ['Content-Type' => 'application/json']);
+        #return json($data, 201, ['username' => 'admin', 'password'=>'admin888']);
+        return redirect('/req2', ['id' => 1]);
+        # return redirect(url('index/index/req2', ['id' => 1]));
     }
 }
