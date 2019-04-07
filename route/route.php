@@ -29,3 +29,24 @@ return [
 Route::get('/', function (){
     return "我们在最好的年华";
 });
+
+
+Route::post('/', function () {
+    return "我是post请求";
+});
+
+Route::put('/', function () {
+    return "我是put请求";
+});
+
+
+Route::delete('/', function () {
+    return "我是delete请求";
+});
+
+
+// 任意请求的类型
+Route::any('/', function () {
+    //return "我是delete请求";
+    dump($_SERVER);
+});
