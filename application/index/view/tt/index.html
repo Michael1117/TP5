@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+</head>
+<body>
+    <ul>
+       <!-- {volist name="data" id="vo"}
+        <li>{$vo.id}&#45;&#45;{$vo.name}</li>
+        {/volist}-->
+
+        {foreach $data as $val}
+        <li>{$val.id}---{$val.name}</li>
+        {/foreach}
+    </ul>
+</body>
+</html>
