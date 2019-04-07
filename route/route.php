@@ -72,3 +72,11 @@ Route::group(['prefix'=>'@index/index/'], function () {
     Route::delete('req2', 'req2') -> name('index/index/req2');
 });
 
+
+// 链式调用
+// 必选参数
+#Route::get('req3/[:id]', '@index/index/req3')->name('index/index/req3')->pattern(['id' => '\d+']);
+
+// 方式二
+// 可选参数
+Route::get('req3/[:id]', '@index/index/req3')->name('index/index/req3');

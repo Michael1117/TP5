@@ -117,7 +117,12 @@ class Index
         # dump(input('?gender'));
 
         // 使用变量修饰符 a 数组 s:字符串 d:数字
-        dump(input('name/d'));
+        # dump(input('name/d'));
 
+    }
+
+    // 推荐
+    public function req3(int $id = 0) {
+        return '参数为：'.$id;
     }
 }
