@@ -1,2 +1,21 @@
 User-agent: *
 Disallow:
+
+
+public function index(Database $db, Paginate $page, Vcode $code) {
+       
+        echo $db -> query().'--'.$page->page().'--'.$code->code();
+    }
+
+class Database
+{
+    public function query()
+    {
+        return 'query';
+    }
+}
+
+
+$db = new Database();
+$page = new Paginate();
+$code = new Vcode();
